@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .back {
+            background-image: url("{{ url_for('static', filename='images/back.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        .back:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.5) 100%);
+            pointer-events: none;
+        }
+        .header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+        .whitecls {
+            text-align: center;
+            padding: 60px;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        .whitecls input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            margin-top: 20px;
+        }
+        .redcls {
+            background-color: red;
+            font-size: 16px;
+            margin-top: 10px;
+            height: 45px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .classred {
+            color: red;
+            font-size: 55px;
+            position: relative;
+            z-index: 1;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+    </style>
+</head>
+<body class="back">
+    <div class="header">
+        <button type="button" class="redcls">Sign in</button>
+    </div>
+    <div class="classred">NETFLIX</div>
+    <div class="whitecls">
+        <h1>
+            <p>Unlimited movies, TV</p>
+            <p>shows, and more.</p>
+        </h1>
+        <h4>Watch anywhere. Cancel anytime.</h4>
+        <h4>Ready to watch? Enter your email to create or restart your membership</h4>
+        <input type="text" id="email" name="email" placeholder="Email address">
+        <button type="submit" class="redcls">GET STARTED ></button>
+    </div>
+</body>
+</html>
